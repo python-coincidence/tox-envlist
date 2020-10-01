@@ -111,7 +111,9 @@ def tox_configure(config: Config):
 				if arg[1] in envlists:
 					config.envlist = envlists[arg[1]]
 				else:
-					config._parser.argparser.error(f"Unknown envlist '{arg[1]}'")
+					config._parser.argparser.error(
+							f"Unknown envlist '{arg[1]}'. (envlists are '{', '.join(envlists)}')"
+							)
 
 	config.args = list(chain.from_iterable(args))
 
