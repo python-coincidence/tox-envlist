@@ -30,17 +30,18 @@ Allows selection of a different tox envlist.
 import re
 import warnings
 from itertools import chain
+from typing import Dict, List
 
 # 3rd party
-import pluggy
-from tox.config import Config, Parser
+import pluggy  # type: ignore
+from tox.config import Config, Parser  # type: ignore
 
 try:
 	# 3rd party
 	from py._vendored_packages.iniconfig import IniConfig
 except ImportError:
 	# 3rd party
-	from iniconfig import IniConfig
+	from iniconfig import IniConfig  # type: ignore
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -76,7 +77,7 @@ def tox_configure(config: Config):
 	Parse the command line and ini options.
 	"""
 
-	args = [[]]
+	args: List[List[str]] = [[]]
 
 	while config.args:
 		val: str = config.args.pop(0)
@@ -92,7 +93,7 @@ def tox_configure(config: Config):
 
 	# Parse envlists
 	ini_config: IniConfig = config._cfg
-	envlists = {}
+	envlists: Dict[str, List[str]] = {}
 
 	for envlist_name, envlist in ini_config.sections.get("envlists", {}).items():
 		envlists[envlist_name] = list(filter(None, re.split("[,; ]", envlist)))
