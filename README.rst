@@ -16,7 +16,7 @@ tox-envlist
 	:widths: 10 90
 
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -41,10 +41,6 @@ tox-envlist
 .. |requires| image:: https://requires.io/github/domdfcoding/tox-envlist/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/tox-envlist/requirements/?branch=master
 	:alt: Requirements Status
-
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/tox-envlist/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/tox-envlist?branch=master
-	:alt: Coverage
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/tox-envlist?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/tox-envlist

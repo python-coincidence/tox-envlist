@@ -10,7 +10,6 @@ if [ -z "$(git status --porcelain --untracked-files=no)" ] || [ "$1" == "-f" ]; 
 
   autopep8 --in-place --select "$errors" -a --recursive tox_envlist/
 
-  autopep8 --in-place --select "$errors" -a --recursive tests/
 
   echo "Running flake8"
 
