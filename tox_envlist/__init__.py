@@ -7,25 +7,110 @@ Allows selection of a different tox envlist.
 #
 #  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 3 of the License, or
-#  (at your option) any later version.
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
 #
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#  GNU General Public License for more details.
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
 #
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software
-#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-#  MA 02110-1301, USA.
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+#  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+#  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+#  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+#  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+#  OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+# stdlib
+import re
+import warnings
+from itertools import chain
+
+# 3rd party
+import pluggy
+from tox.config import Config, Parser
+
+try:
+	# 3rd party
+	from py._vendored_packages.iniconfig import IniConfig
+except ImportError:
+	# 3rd party
+	from iniconfig import IniConfig
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
-
 __license__: str = "MIT License"
 __version__: str = "0.0.0"
 __email__: str = "dominic@davis-foster.co.uk"
+
+__all__ = ["option_names", "tox_addoption", "tox_configure"]
+
+hookimpl = pluggy.HookimplMarker("tox")
+
+option_names = ["-n", "--envlist-name"]
+
+
+@hookimpl
+def tox_addoption(parser: Parser):
+	"""
+	Add a command line option to choose a different envlist.
+	"""
+
+	parser.add_argument(
+			*option_names,
+			help="The name of the envlist to use.",
+			default=None,
+			type=str,
+			nargs=1,
+			)
+
+
+@hookimpl
+def tox_configure(config: Config):
+	"""
+	Parse the command line and ini options.
+	"""
+
+	args = [[]]
+
+	while config.args:
+		val: str = config.args.pop(0)
+		if val.startswith("-"):
+			args.append([val])
+		else:
+			args[-1].append(val)
+
+	envlist_set = False
+	envlist_name_set = False
+
+	# Parse envlists
+	ini_config: IniConfig = config._cfg
+	envlists = {}
+
+	for envlist_name, envlist in ini_config.sections.get("envlists", {}).items():
+		envlists[envlist_name] = list(filter(None, re.split("[,; ]", envlist)))
+
+	for idx, arg in enumerate(args):
+		if arg and arg[0] in {"-e", "--envlist"}:
+			envlist_set = True
+		elif arg and arg[0] in option_names:
+			envlist_name_set = True
+
+	for idx, arg in enumerate(args):
+		if arg and arg[0] in option_names:
+			if envlist_name_set and envlist_set:
+				warnings.warn(f"Ignoring '{' '.join(args.pop(idx))}' option as '-e / --envlist' option given.")
+			elif envlist_name_set:
+				if arg[1] in envlists:
+					config.envlist = envlists[arg[1]]
+				else:
+					config._parser.argparser.error(f"Unknown envlist '{arg[1]}'")
+
+	config.args = list(chain.from_iterable(args))
+
+	return config

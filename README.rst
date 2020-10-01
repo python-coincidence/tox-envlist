@@ -15,10 +15,8 @@ tox-envlist
 	:stub-columns: 1
 	:widths: 10 90
 
-	* - Docs
-	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -26,13 +24,7 @@ tox-envlist
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/tox-envlist/latest?logo=read-the-docs
-	:target: https://tox-envlist.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/tox-envlist/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22Docs+Check%22
-	:alt: Docs Check Status
 
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/tox-envlist/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/tox-envlist
@@ -49,6 +41,10 @@ tox-envlist
 .. |requires| image:: https://requires.io/github/domdfcoding/tox-envlist/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/tox-envlist/requirements/?branch=master
 	:alt: Requirements Status
+
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/tox-envlist/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/tox-envlist?branch=master
+	:alt: Coverage
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/tox-envlist?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/tox-envlist
@@ -94,7 +90,33 @@ tox-envlist
 
 .. end shields
 
-|
+
+Configuration
+----------------
+
+In your ``tox.ini`` file, add the following:
+
+.. code-block:: ini
+
+	[envlists]
+	test = py36, py37, py38
+	qa = mypy,lint
+	cov = py36,coverage
+
+This will configure three envlists:
+
+* **test**, which runs the environments ``py36``, ``py37`` and ``py38``
+* **qa**, which runs the environments ``mypy`` and ``lint``
+* **cov**, which runs the environments ``py36`` and ``coverage``
+
+You are free to customise these envlists and add new ones.
+
+
+Usage
+-------
+
+Run tox using the ``-n`` / ``--envlist-name [name]`` option, where ``name`` is the name of the envlist.
+
 
 Installation
 --------------
