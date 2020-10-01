@@ -80,7 +80,9 @@ def tox_configure(config: Config):
 
 	while config.args:
 		val: str = config.args.pop(0)
-		if val.startswith("-"):
+		if val == "--":
+			break
+		elif val.startswith("-"):
 			args.append([val])
 		else:
 			args[-1].append(val)
