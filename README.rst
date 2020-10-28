@@ -84,7 +84,7 @@ tox-envlist
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
 
-.. |pre_commit_ci| image:: https://https://results.pre-commit.ci/badge/github/domdfcoding/tox-envlist/master.svg
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/tox-envlist/master.svg
 	:target: https://results.pre-commit.ci/latest/github/domdfcoding/tox-envlist/master
 	:alt: pre-commit.ci status
 
