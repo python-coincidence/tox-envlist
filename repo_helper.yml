@@ -14,8 +14,9 @@ enable_docs: False
 enable_tests: False
 
 python_versions:
-  - 3.6
-  - 3.7
-  - 3.8
+ - 3.6
+ - 3.7
+ - 3.8
+ - 3.9
 
 travis_pypi_secure: "mqmctJbuhd0iY1sKKdVRPcL8J1nKzFuiZJjyIs/Wida8Xuh12tGAfjuXnWCAQlWXNP5B2/z1XucST352QMub52C2L0lST7UiGh7wbPYXuig1FDqE/WqhauIhaBaea/AvI3TTEARbCeOAOJjYBD4sN3DFE33vTuFs9KK7J9Fir7Y8zW1sWFc74wNLcVZ9jWqj7LjlLCdOioYkQtaIbPW4RSt0qn4xQtx7NFvV5BqUCqaN9JbYmflGlp+FfHJp56xE7Yy0u73hsgNI7DNTiOm8RcZCqiiXy77RYmCstzUOVnY3CvHZHUU7SB4CgirjeaZNh6JICW5/9cVxt2pJGBTGrMiF3IAp6cqwWXt4EBYzAE5ievxJ2Sr15VFtUFjINejaxAng0xlElp3cOninOPRqgGEtd+AeK7b50REpSIl0YkVjPoRXVb/ptZ1O/uyNp+wVgzraRXyVWDZue1n6ee+/xEDE/IbHAEgdP9IMKxxCL4/+mY2qWAmbSaZLSyus9rySAlvS2iib7wuYr+m+Ae+6lCb8mq/09n1KSI1EYZCVmWOd0EnWp3DBqmPx35Yv5TepcSqSY24b1CYTgYHzF24bL4k+vKzbxYZT3sBwlVvL6R2chIbe6KheCJwkmKWW3k04UY67lPot32kRjMJMdRF9V5jx+oRnfKt1OJWtbFbqkUQ="
