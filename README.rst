@@ -16,7 +16,7 @@ tox-envlist
 	:widths: 10 90
 
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
+	  - |actions_linux| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -24,9 +24,7 @@ tox-envlist
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-
-
-.. |travis| image:: https://github.com/domdfcoding/tox-envlist/workflows/Linux%20Tests/badge.svg
+.. |actions_linux| image:: https://github.com/domdfcoding/tox-envlist/workflows/Linux%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22Linux+Tests%22
 	:alt: Linux Test Status
 
