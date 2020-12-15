@@ -18,3 +18,7 @@ python_versions:
  - 3.7
  - 3.8
  - 3.9
+
+entry_points:
+ tox:
+  - envlist = tox_envlist
