@@ -5,7 +5,7 @@
 Allows selection of a different tox envlist.
 """
 #
-#  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright © 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@ Allows selection of a different tox envlist.
 #
 
 # stdlib
+import itertools
 import re
 import warnings
 from itertools import chain
@@ -34,7 +35,7 @@ from typing import Dict, List
 
 # 3rd party
 import pluggy  # type: ignore
-from tox.config import Config, Parser  # type: ignore
+from tox.config import Config, ParseIni, Parser  # type: ignore
 
 try:
 	# 3rd party
@@ -119,3 +120,29 @@ def tox_configure(config: Config):
 	config.args = list(chain.from_iterable(args))
 
 	return config
+
+
+def expand_section_names(self, config):  # noqa: D103
+	# From tox
+	# https://github.com/tox-dev
+
+	factor_re = re.compile(r"\{\s*([\w\s.,-]+)\s*\}")
+	split_re = re.compile(r"\s*,\s*")
+
+	to_remove = set()
+
+	for section in list(config.sections):
+		split_section = factor_re.split(section)
+		print(section, split_section, list(itertools.product(*map(split_re.split, split_section))))
+
+		for parts in itertools.product(*map(split_re.split, split_section)):
+			section_name = ''.join(parts)
+			if section_name not in config.sections:
+				config.sections[section_name] = config.sections[section]
+				to_remove.add(section)
+
+	for section in to_remove:
+		del config.sections[section]
+
+
+ParseIni.expand_section_names = expand_section_names
