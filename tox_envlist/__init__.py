@@ -133,7 +133,6 @@ def expand_section_names(self, config):  # noqa: D103
 
 	for section in list(config.sections):
 		split_section = factor_re.split(section)
-		print(section, split_section, list(itertools.product(*map(split_re.split, split_section))))
 
 		for parts in itertools.product(*map(split_re.split, split_section)):
 			section_name = ''.join(parts)
