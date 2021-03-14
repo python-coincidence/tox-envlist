@@ -77,7 +77,7 @@ tox-envlist
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/tox-envlist
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/tox-envlist/v0.2.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/tox-envlist/v0.2.2
 	:target: https://github.com/domdfcoding/tox-envlist/pulse
 	:alt: GitHub commits since tagged version
 
