@@ -35,7 +35,7 @@ from typing import Dict, List
 
 # 3rd party
 import pluggy  # type: ignore
-from braceexpand import braceexpand
+from braceexpand import braceexpand  # type: ignore
 from tox.config import Config, ParseIni, Parser  # type: ignore
 
 try:
