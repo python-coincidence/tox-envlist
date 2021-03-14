@@ -1,6 +1,6 @@
 [build-system]
-requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
-build-backend = "setuptools.build_meta"
+requires = [ "whey",]
+build-backend = "whey"
 
 [project]
 name = "tox-envlist"
@@ -13,9 +13,6 @@ dynamic = [ "requires-python", "classifiers", "dependencies",]
 email = "dominic@davis-foster.co.uk"
 name = "Dominic Davis-Foster"
 
-[tool.importcheck]
-always = [ "tox_envlist",]
-
 [project.license]
 file = "LICENSE"
 
@@ -23,6 +20,17 @@ file = "LICENSE"
 Homepage = "https://github.com/domdfcoding/tox-envlist"
 "Issue Tracker" = "https://github.com/domdfcoding/tox-envlist/issues"
 "Source Code" = "https://github.com/domdfcoding/tox-envlist"
+
+[tool.importcheck]
+always = [ "tox_envlist",]
+
+[tool.whey]
+base-classifiers = [ "Typing :: Typed",]
+python-versions = [ "3.6", "3.7", "3.8", "3.9",]
+python-implementations = [ "CPython",]
+platforms = [ "Windows", "macOS", "Linux",]
+license-key = "MIT"
+package = "tox_envlist"
 
 [project.entry-points.tox]
 envlist = "tox_envlist"

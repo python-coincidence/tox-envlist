@@ -12,6 +12,8 @@ short_desc: 'Allows selection of a different tox envlist.'
 enable_conda: False
 enable_docs: False
 enable_tests: False
+mypy_version: "0.812"
+use_whey: true
 
 python_versions:
  - 3.6
