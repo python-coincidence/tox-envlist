@@ -35,6 +35,7 @@ from typing import Dict, List
 
 # 3rd party
 import pluggy  # type: ignore
+from braceexpand import braceexpand
 from tox.config import Config, ParseIni, Parser  # type: ignore
 
 try:
@@ -72,6 +73,9 @@ def tox_addoption(parser: Parser):
 			)
 
 
+DELIMITERS = re.compile(r"[,; \n]\s*(?![^{}]*})")
+
+
 @hookimpl
 def tox_configure(config: Config):
 	"""
@@ -97,7 +101,9 @@ def tox_configure(config: Config):
 	envlists: Dict[str, List[str]] = {}
 
 	for envlist_name, envlist in ini_config.sections.get("envlists", {}).items():
-		envlists[envlist_name] = list(filter(None, re.split("[,; ]", envlist)))
+		envlist_elements = DELIMITERS.split(envlist)
+		expanded_envlist = list(chain.from_iterable(map(braceexpand, envlist_elements)))
+		envlists[envlist_name] = list(filter(None, expanded_envlist))
 
 	for idx, arg in enumerate(args):
 		if arg and arg[0] in {"-e", "--envlist"}:
