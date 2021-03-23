@@ -17,9 +17,9 @@ name = "Dominic Davis-Foster"
 file = "LICENSE"
 
 [project.urls]
-Homepage = "https://github.com/domdfcoding/tox-envlist"
-"Issue Tracker" = "https://github.com/domdfcoding/tox-envlist/issues"
-"Source Code" = "https://github.com/domdfcoding/tox-envlist"
+Homepage = "https://github.com/python-coincidence/tox-envlist"
+"Issue Tracker" = "https://github.com/python-coincidence/tox-envlist/issues"
+"Source Code" = "https://github.com/python-coincidence/tox-envlist"
 
 [tool.importcheck]
 always = [ "tox_envlist",]

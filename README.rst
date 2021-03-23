@@ -26,32 +26,32 @@ tox-envlist
 	* - Other
 	  - |license| |language| |requires|
 
-.. |actions_linux| image:: https://github.com/domdfcoding/tox-envlist/workflows/Linux/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22Linux%22
+.. |actions_linux| image:: https://github.com/python-coincidence/tox-envlist/workflows/Linux/badge.svg
+	:target: https://github.com/python-coincidence/tox-envlist/actions?query=workflow%3A%22Linux%22
 	:alt: Linux Test Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/tox-envlist/workflows/Windows/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22Windows%22
+.. |actions_windows| image:: https://github.com/python-coincidence/tox-envlist/workflows/Windows/badge.svg
+	:target: https://github.com/python-coincidence/tox-envlist/actions?query=workflow%3A%22Windows%22
 	:alt: Windows Test Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/tox-envlist/workflows/macOS/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22macOS%22
+.. |actions_macos| image:: https://github.com/python-coincidence/tox-envlist/workflows/macOS/badge.svg
+	:target: https://github.com/python-coincidence/tox-envlist/actions?query=workflow%3A%22macOS%22
 	:alt: macOS Test Status
 
-.. |actions_flake8| image:: https://github.com/domdfcoding/tox-envlist/workflows/Flake8/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22Flake8%22
+.. |actions_flake8| image:: https://github.com/python-coincidence/tox-envlist/workflows/Flake8/badge.svg
+	:target: https://github.com/python-coincidence/tox-envlist/actions?query=workflow%3A%22Flake8%22
 	:alt: Flake8 Status
 
-.. |actions_mypy| image:: https://github.com/domdfcoding/tox-envlist/workflows/mypy/badge.svg
-	:target: https://github.com/domdfcoding/tox-envlist/actions?query=workflow%3A%22mypy%22
+.. |actions_mypy| image:: https://github.com/python-coincidence/tox-envlist/workflows/mypy/badge.svg
+	:target: https://github.com/python-coincidence/tox-envlist/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/tox-envlist/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/tox-envlist/requirements/?branch=master
+.. |requires| image:: https://requires.io/github/python-coincidence/tox-envlist/requirements.svg?branch=master
+	:target: https://requires.io/github/python-coincidence/tox-envlist/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/tox-envlist?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/tox-envlist
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/python-coincidence/tox-envlist?logo=codefactor
+	:target: https://www.codefactor.io/repository/github/python-coincidence/tox-envlist
 	:alt: CodeFactor Grade
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/tox-envlist
@@ -70,19 +70,19 @@ tox-envlist
 	:target: https://pypi.org/project/tox-envlist/
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/tox-envlist
-	:target: https://github.com/domdfcoding/tox-envlist/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/github/license/python-coincidence/tox-envlist
+	:target: https://github.com/python-coincidence/tox-envlist/blob/master/LICENSE
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/tox-envlist
+.. |language| image:: https://img.shields.io/github/languages/top/python-coincidence/tox-envlist
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/tox-envlist/v0.2.2
-	:target: https://github.com/domdfcoding/tox-envlist/pulse
+.. |commits-since| image:: https://img.shields.io/github/commits-since/python-coincidence/tox-envlist/v0.2.2
+	:target: https://github.com/python-coincidence/tox-envlist/pulse
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/tox-envlist
-	:target: https://github.com/domdfcoding/tox-envlist/commit/master
+.. |commits-latest| image:: https://img.shields.io/github/last-commit/python-coincidence/tox-envlist
+	:target: https://github.com/python-coincidence/tox-envlist/commit/master
 	:alt: GitHub last commit
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2021
@@ -92,8 +92,8 @@ tox-envlist
 	:target: https://pypi.org/project/tox-envlist/
 	:alt: PyPI - Downloads
 
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/tox-envlist/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/tox-envlist/master
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/python-coincidence/tox-envlist/master.svg
+	:target: https://results.pre-commit.ci/latest/github/python-coincidence/tox-envlist/master
 	:alt: pre-commit.ci status
 
 .. end shields
