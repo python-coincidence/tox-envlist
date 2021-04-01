@@ -1,0 +1,12 @@
+mypy create: ...\.tox\mypy
+mypy installed: ...\.tox\mypy\lib\site-packages\pip\_vendor\packaging\version.py:127: DeprecationWarning: Creating a LegacyVersion has been deprecated and will be removed in the next major release,  warnings.warn(
+mypy run-test-pre: PYTHONHASHSEED='2468'
+mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
+lint create: ...\.tox\lint
+lint installed: ...\.tox\lint\lib\site-packages\pip\_vendor\packaging\version.py:127: DeprecationWarning: Creating a LegacyVersion has been deprecated and will be removed in the next major release,  warnings.warn(
+lint run-test-pre: PYTHONHASHSEED='1357'
+lint run-test: commands[0] | python -c 'print('"'"'This is the lint testenv'"'"')'
+___________________________________ summary ___________________________________
+  mypy: commands succeeded
+  lint: commands succeeded
+  congratulations :)
