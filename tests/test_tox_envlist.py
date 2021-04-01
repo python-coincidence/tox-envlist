@@ -6,9 +6,7 @@ from typing import List
 import pytest
 from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.paths import PathPlus
-
-# this package
-from tests.common import prepare_stdout, run_tox
+from testing_tox import prepare_stdout, run_tox
 
 example_tox = PathPlus(__file__).parent / "example_tox.ini"
 
