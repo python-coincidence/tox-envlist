@@ -33,13 +33,16 @@ remove_redundant_aliases = true
 default_section = "THIRDPARTY"
 known_third_party = [
     "braceexpand",
+    "coincidence",
     "coverage",
     "coverage_pyver_pragma",
+    "domdf_python_tools",
     "github",
     "pluggy",
     "pytest",
     "pytest_cov",
     "pytest_randomly",
+    "pytest_timeout",
     "requests",
     "tox",
 ]

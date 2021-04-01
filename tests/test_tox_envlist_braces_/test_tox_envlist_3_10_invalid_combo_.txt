@@ -1,0 +1,8 @@
+WARNING: Ignoring '-n qa' option as '-e / --envlist' option given.
+mypy create: .../.tox/mypy
+mypy installed: /usr/lib/python3.10/distutils/__init__.py:16: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives,  warnings.warn("The distutils package is deprecated and slated for ",<frozen importlib._bootstrap>:681: ImportWarning: _SixMetaPathImporter.exec_module() not found; falling back to load_module(),.../.tox/mypy/lib/python3.10/site-packages/pip/_vendor/packaging/version.py:127: DeprecationWarning: Creating a LegacyVersion has been deprecated and will be removed in the next major release,  warnings.warn(,<frozen importlib._bootstrap>:681: ImportWarning: _SixMetaPathImporter.exec_module() not found; falling back to load_module()
+mypy run-test-pre: PYTHONHASHSEED='2468'
+mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
+___________________________________ summary ____________________________________
+  mypy: commands succeeded
+  congratulations :)
