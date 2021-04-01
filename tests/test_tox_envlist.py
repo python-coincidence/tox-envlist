@@ -35,6 +35,7 @@ def test_tox_envlist(
 		command: List[str],
 		toxinidir: PathPlus,
 		version: str,
+		os_sep,
 		advanced_file_regression: AdvancedFileRegressionFixture,
 		):
 
@@ -47,7 +48,7 @@ def test_tox_envlist(
 		advanced_file_regression.check(prepare_stdout(capout.out, toxinidir))
 
 
-def test_tox_envlist_no_command(capsys, toxinidir: PathPlus):
+def test_tox_envlist_no_command(capsys, toxinidir: PathPlus, os_sep):
 	# The output varies depending on the versions of python installed on the host
 
 	try:
@@ -59,7 +60,7 @@ def test_tox_envlist_no_command(capsys, toxinidir: PathPlus):
 		assert capout.out
 
 
-def test_tox_envlist_test(capsys, toxinidir: PathPlus):
+def test_tox_envlist_test(capsys, toxinidir: PathPlus, os_sep):
 	# The output varies depending on the versions of python installed on the host
 
 	try:
@@ -71,7 +72,7 @@ def test_tox_envlist_test(capsys, toxinidir: PathPlus):
 		assert capout.out
 
 
-def test_tox_envlist_unknown(capsys, toxinidir: PathPlus):
+def test_tox_envlist_unknown(capsys, toxinidir: PathPlus, os_sep):
 	# The output varies depending on the versions of python installed on the host
 
 	try:

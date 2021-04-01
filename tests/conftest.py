@@ -1,3 +1,6 @@
+# stdlib
+import os
+
 # 3rd party
 import pytest
 from coincidence.selectors import only_version
@@ -14,4 +17,24 @@ pytest_plugins = ("coincidence", )
 				]
 		)
 def version(request):
+	return request.param
+
+
+@pytest.fixture(
+		params=[
+				pytest.param(
+						"forward",
+						marks=pytest.mark.skipif(
+								os.sep == '\\', reason=r"Output differs on platforms where os.sep == '\\'"
+								)
+						),
+				pytest.param(
+						"backward",
+						marks=pytest.mark.skipif(
+								os.sep == '/', reason="Output differs on platforms where os.sep == '/'"
+								)
+						),
+				]
+		)
+def os_sep(request):
 	return request.param
