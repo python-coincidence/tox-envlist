@@ -34,3 +34,4 @@ classifiers:
 
 keywords:
  - tox
+ - tox-plugin

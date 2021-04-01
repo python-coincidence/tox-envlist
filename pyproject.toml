@@ -7,7 +7,7 @@ name = "tox-envlist"
 version = "0.2.2"
 description = "Allows selection of a different tox envlist."
 readme = "README.rst"
-keywords = [ "tox",]
+keywords = [ "tox", "tox-plugin",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 
 [[project.authors]]
