@@ -80,4 +80,4 @@ def test_tox_envlist_unknown(capsys, toxinidir: PathPlus):
 		run_tox(["-n", "cov"], toxinidir)
 	finally:
 		capout = capsys.readouterr()
-		assert "tox: error: Unknown envlist ''cov''. (envlists are ''test'' and ''qa'')" in capout.err
+		assert "tox: error: Unknown envlist 'cov'. (envlists are 'test' and 'qa')" in capout.err
