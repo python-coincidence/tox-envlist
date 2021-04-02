@@ -81,7 +81,7 @@ tox-envlist
 .. |language| image:: https://img.shields.io/github/languages/top/python-coincidence/tox-envlist
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/python-coincidence/tox-envlist/v0.2.2
+.. |commits-since| image:: https://img.shields.io/github/commits-since/python-coincidence/tox-envlist/v0.3.0
 	:target: https://github.com/python-coincidence/tox-envlist/pulse
 	:alt: GitHub commits since tagged version
 
