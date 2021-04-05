@@ -22,7 +22,7 @@ tox-envlist
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -95,10 +95,6 @@ tox-envlist
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/tox-envlist
 	:target: https://pypi.org/project/tox-envlist/
 	:alt: PyPI - Downloads
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/python-coincidence/tox-envlist/master.svg
-	:target: https://results.pre-commit.ci/latest/github/python-coincidence/tox-envlist/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
