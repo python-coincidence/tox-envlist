@@ -140,3 +140,6 @@ To install with ``pip``:
 	$ python -m pip install tox-envlist
 
 .. end installation
+
+``tox-envlist`` requires Python 3.7 or later to run,
+but can be used to configure envlists which use earlier Python version.
