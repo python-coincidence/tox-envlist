@@ -38,7 +38,7 @@ from typing import TYPE_CHECKING, Dict, List
 
 # 3rd party
 import pluggy  # type: ignore
-from braceexpand import braceexpand  # type: ignore
+from braceexpand import braceexpand
 from domdf_python_tools.words import word_join
 from tox import config, reporter  # type: ignore
 
