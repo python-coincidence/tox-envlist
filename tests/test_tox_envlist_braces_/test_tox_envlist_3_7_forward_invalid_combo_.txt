@@ -1,6 +1,5 @@
 WARNING: Ignoring '-n qa' option as '-e / --envlist' option given.
 mypy create: .../.tox/mypy
-mypy installed:
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 ___________________________________ summary ____________________________________

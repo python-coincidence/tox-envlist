@@ -1,4 +1,4 @@
 braceexpand>=0.1.6
 domdf-python-tools>=2.8.1
 pluggy>=0.13.1
-tox>=3.18.0
+tox>=3.21.0

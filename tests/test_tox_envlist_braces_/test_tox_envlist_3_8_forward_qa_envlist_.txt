@@ -1,9 +1,7 @@
 mypy create: .../.tox/mypy
-mypy installed:
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 lint create: .../.tox/lint
-lint installed:
 lint run-test-pre: PYTHONHASHSEED='1357'
 lint run-test: commands[0] | python -c 'print('"'"'This is the lint testenv'"'"')'
 ___________________________________ summary ____________________________________

@@ -1,9 +1,7 @@
 py37 create: .../.tox/py37
-py37 installed:
 py37 run-test-pre: PYTHONHASHSEED='1234'
 py37 run-test: commands[0] | python --version
 mypy create: .../.tox/mypy
-mypy installed:
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 ___________________________________ summary ____________________________________
