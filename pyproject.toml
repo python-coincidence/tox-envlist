@@ -42,9 +42,12 @@ platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "tox_envlist"
 
-[tool.mkrecipe]
-conda-channels = [ "python-coincidence",]
-extras = "all"
+[tool.mypy]
+python_version = "3.7"
+namespace_packages = true
+check_untyped_defs = true
+warn_unused_ignores = true
+no_implicit_optional = true
 
 [project.entry-points.tox]
 envlist = "tox_envlist"
