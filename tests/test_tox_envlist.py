@@ -1,5 +1,6 @@
 # stdlib
 import sys
+import sysconfig
 from typing import List
 
 # 3rd party
@@ -9,6 +10,12 @@ from domdf_python_tools.paths import PathPlus
 from testing_tox import prepare_stdout, run_tox
 
 example_tox = PathPlus(__file__).parent / "example_tox.ini"
+
+
+def _prepare_stdout(stdout: str, toxinidir: PathPlus) -> str:
+	stdout = prepare_stdout(stdout, toxinidir)
+	stdout = stdout.replace(sysconfig.get_config_var("installed_platbase"), "...")
+	return stdout
 
 
 @pytest.fixture()
@@ -45,7 +52,7 @@ def test_tox_envlist(
 	finally:
 		capout = capsys.readouterr()
 		assert not capout.err
-		advanced_file_regression.check(prepare_stdout(capout.out, toxinidir))
+		advanced_file_regression.check(_prepare_stdout(capout.out, toxinidir))
 
 
 def test_tox_envlist_no_command(capsys, toxinidir: PathPlus, os_sep):
