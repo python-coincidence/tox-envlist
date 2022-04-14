@@ -14,7 +14,10 @@ example_tox = PathPlus(__file__).parent / "example_tox.ini"
 
 def _prepare_stdout(stdout: str, toxinidir: PathPlus) -> str:
 	stdout = prepare_stdout(stdout, toxinidir)
-	stdout = stdout.replace(sysconfig.get_config_var("installed_platbase"), "...")
+
+	platbase = sysconfig.get_config_var("installed_platbase")
+	if platbase:
+		stdout = stdout.replace(platbase, "...")
 	return stdout
 
 
