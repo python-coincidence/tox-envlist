@@ -139,7 +139,7 @@ def tox_configure(config: config.Config):
 	return config
 
 
-def expand_section_names(self, config):  # noqa: D103
+def expand_section_names(self, config):
 	# Unlike the default one in tox this one allows full stops / periods / decimal points
 	# Important for version numbers
 
