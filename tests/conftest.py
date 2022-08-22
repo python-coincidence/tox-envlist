@@ -14,6 +14,7 @@ pytest_plugins = ("coincidence", )
 				pytest.param("3.8", marks=only_version(3.8, "Output differs on each version.")),
 				pytest.param("3.9", marks=only_version(3.9, "Output differs on each version.")),
 				pytest.param("3.10", marks=only_version("3.10", "Output differs on each version.")),
+				pytest.param("3.11", marks=only_version("3.11", "Output differs on each version.")),
 				]
 		)
 def version(request):

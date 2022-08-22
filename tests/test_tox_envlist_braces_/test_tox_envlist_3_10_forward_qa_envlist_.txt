@@ -1,9 +1,7 @@
 mypy create: .../.tox/mypy
-mypy installed: .../.tox/mypy/lib/python3.10/site-packages/pip/_internal/locations/_distutils.py:9: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives,  from distutils.cmd import Command as DistutilsCommand,.../lib/python3.10/distutils/command/install.py:13: DeprecationWarning: The distutils.sysconfig module is deprecated, use sysconfig instead,  from distutils.sysconfig import get_config_vars
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 lint create: .../.tox/lint
-lint installed: .../.tox/lint/lib/python3.10/site-packages/pip/_internal/locations/_distutils.py:9: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives,  from distutils.cmd import Command as DistutilsCommand,.../lib/python3.10/distutils/command/install.py:13: DeprecationWarning: The distutils.sysconfig module is deprecated, use sysconfig instead,  from distutils.sysconfig import get_config_vars
 lint run-test-pre: PYTHONHASHSEED='1357'
 lint run-test: commands[0] | python -c 'print('"'"'This is the lint testenv'"'"')'
 ___________________________________ summary ____________________________________
