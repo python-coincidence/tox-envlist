@@ -1,7 +1,10 @@
-WARNING: Ignoring '-n qa' option as '-e / --envlist' option given.
+py311 create: ...\.tox\py311
+py311 run-test-pre: PYTHONHASHSEED='1234'
+py311 run-test: commands[0] | python --version
 mypy create: ...\.tox\mypy
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 ___________________________________ summary ___________________________________
+  py311: commands succeeded
   mypy: commands succeeded
   congratulations :)
