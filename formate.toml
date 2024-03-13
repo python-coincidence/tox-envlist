@@ -48,5 +48,5 @@ known_third_party = [
     "requests",
     "tox",
 ]
-known_first_party = "tox_envlist"
+known_first_party = [ "tox_envlist",]
 line_length = 115
