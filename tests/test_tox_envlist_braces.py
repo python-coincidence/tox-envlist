@@ -41,12 +41,11 @@ manual_envs = f"py{sys.version_info[0]}{sys.version_info[1]}-attrs{19.3,20.2},my
 				pytest.param(["-n", "qa", "-e", "mypy"], id="invalid_combo"),
 				]
 		)
+@pytest.mark.usefixtures("version", "os_sep")
 def test_tox_envlist(
 		capsys,
 		command: List[str],
 		toxinidir: PathPlus,
-		version,
-		os_sep,
 		advanced_file_regression: AdvancedFileRegressionFixture,
 		):
 	tox.reporter._INSTANCE.tw._file = sys.stdout
@@ -60,7 +59,8 @@ def test_tox_envlist(
 		advanced_file_regression.check(_prepare_stdout(capout.out, toxinidir))
 
 
-def test_tox_envlist_no_command(capsys, toxinidir: PathPlus, os_sep):
+@pytest.mark.usefixtures("os_sep")
+def test_tox_envlist_no_command(capsys, toxinidir: PathPlus):
 	# The output varies depending on the versions of python installed on the host
 	tox.reporter._INSTANCE.tw._file = sys.stdout
 
@@ -73,7 +73,8 @@ def test_tox_envlist_no_command(capsys, toxinidir: PathPlus, os_sep):
 		assert capout.out
 
 
-def test_tox_envlist_test(capsys, toxinidir: PathPlus, os_sep):
+@pytest.mark.usefixtures("os_sep")
+def test_tox_envlist_test(capsys, toxinidir: PathPlus):
 	# The output varies depending on the versions of python installed on the host
 	tox.reporter._INSTANCE.tw._file = sys.stdout
 

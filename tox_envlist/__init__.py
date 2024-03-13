@@ -37,10 +37,10 @@ from itertools import chain
 from typing import TYPE_CHECKING, Dict, List
 
 # 3rd party
-import pluggy  # type: ignore
+import pluggy
 from braceexpand import braceexpand
 from domdf_python_tools.words import word_join
-from tox import config, reporter  # type: ignore
+from tox import config, reporter  # type: ignore[import]
 
 if TYPE_CHECKING:
 	# 3rd party
@@ -61,7 +61,7 @@ option_names = ["-n", "--envlist-name"]
 
 
 @hookimpl
-def tox_addoption(parser: config.Parser):
+def tox_addoption(parser: config.Parser) -> None:
 	"""
 	Add a command line option to choose a different envlist.
 	"""
@@ -85,7 +85,7 @@ split_re = re.compile(r"\s*,\s*")
 
 
 @hookimpl
-def tox_configure(config: config.Config):
+def tox_configure(config: config.Config) -> config.Config:
 	"""
 	Parse the command line and ini options.
 	"""
@@ -139,7 +139,7 @@ def tox_configure(config: config.Config):
 	return config
 
 
-def expand_section_names(self, config):
+def expand_section_names(self, config: config.Config) -> None:
 	# Unlike the default one in tox this one allows full stops / periods / decimal points
 	# Important for version numbers
 
