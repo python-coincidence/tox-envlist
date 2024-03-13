@@ -1,9 +1,7 @@
 mypy create: .../.tox/mypy
-mypy installed: .../.tox/mypy/lib/python3.11/site-packages/pip/_vendor/certifi/core.py:50: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.,  _CACERT_CTX = get_path("pip._vendor.certifi", "cacert.pem")
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 lint create: .../.tox/lint
-lint installed: .../.tox/lint/lib/python3.11/site-packages/pip/_vendor/certifi/core.py:50: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.,  _CACERT_CTX = get_path("pip._vendor.certifi", "cacert.pem")
 lint run-test-pre: PYTHONHASHSEED='1357'
 lint run-test: commands[0] | python -c 'print('"'"'This is the lint testenv'"'"')'
 ___________________________________ summary ____________________________________

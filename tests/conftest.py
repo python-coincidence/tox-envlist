@@ -15,9 +15,11 @@ pytest_plugins = ("coincidence", )
 				pytest.param("3.9", marks=only_version(3.9, "Output differs on each version.")),
 				pytest.param("3.10", marks=only_version("3.10", "Output differs on each version.")),
 				pytest.param("3.11", marks=only_version("3.11", "Output differs on each version.")),
+				pytest.param("3.12", marks=only_version("3.12", "Output differs on each version.")),
+				pytest.param("3.13", marks=only_version("3.13", "Output differs on each version.")),
 				]
 		)
-def version(request):
+def version(request) -> str:
 	return request.param
 
 
@@ -37,5 +39,5 @@ def version(request):
 						),
 				]
 		)
-def os_sep(request):
+def os_sep(request) -> str:
 	return request.param
