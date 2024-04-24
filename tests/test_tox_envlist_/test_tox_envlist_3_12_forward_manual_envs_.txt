@@ -2,6 +2,7 @@ py312 create: .../.tox/py312
 py312 run-test-pre: PYTHONHASHSEED='1234'
 py312 run-test: commands[0] | python --version
 mypy create: .../.tox/mypy
+mypy installed: .../.tox/mypy/lib/python3.12/site-packages/pip/_internal/metadata/importlib/_envs.py:111: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html,  from pip._vendor.pkg_resources import find_distributions
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 ___________________________________ summary ____________________________________

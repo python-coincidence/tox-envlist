@@ -1,7 +1,9 @@
 mypy create: .../.tox/mypy
+mypy installed: .../.tox/mypy/lib/python3.13/site-packages/pip/_internal/metadata/importlib/_envs.py:111: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html,  from pip._vendor.pkg_resources import find_distributions
 mypy run-test-pre: PYTHONHASHSEED='2468'
 mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
 lint create: .../.tox/lint
+lint installed: .../.tox/lint/lib/python3.13/site-packages/pip/_internal/metadata/importlib/_envs.py:111: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html,  from pip._vendor.pkg_resources import find_distributions
 lint run-test-pre: PYTHONHASHSEED='1357'
 lint run-test: commands[0] | python -c 'print('"'"'This is the lint testenv'"'"')'
 ___________________________________ summary ____________________________________
