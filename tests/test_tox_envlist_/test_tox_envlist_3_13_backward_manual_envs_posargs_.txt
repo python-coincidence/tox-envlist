@@ -1,0 +1,10 @@
+py313 create: ...\.tox\py313
+py313 run-test-pre: PYTHONHASHSEED='1234'
+py313 run-test: commands[0] | python --version
+mypy create: ...\.tox\mypy
+mypy run-test-pre: PYTHONHASHSEED='2468'
+mypy run-test: commands[0] | python -c 'print('"'"'This is the mypy testenv'"'"')'
+___________________________________ summary ____________________________________
+  py313: commands succeeded
+  mypy: commands succeeded
+  congratulations :)
