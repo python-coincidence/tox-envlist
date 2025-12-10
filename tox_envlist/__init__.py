@@ -40,7 +40,7 @@ from typing import TYPE_CHECKING, Dict, List
 import pluggy
 from braceexpand import braceexpand
 from domdf_python_tools.words import word_join
-from tox import config, reporter  # type: ignore[import]
+from tox import config, reporter  # type: ignore[import-untyped]
 
 if TYPE_CHECKING:
 	# 3rd party
