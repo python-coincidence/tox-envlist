@@ -61,7 +61,7 @@ option_names = ["-n", "--envlist-name"]
 
 
 @hookimpl
-def tox_addoption(parser: config.Parser) -> None:
+def tox_addoption(parser: config.Parser) -> None:  # noqa: PRM002
 	"""
 	Add a command line option to choose a different envlist.
 	"""
@@ -85,7 +85,7 @@ split_re = re.compile(r"\s*,\s*")
 
 
 @hookimpl
-def tox_configure(config: config.Config) -> config.Config:
+def tox_configure(config: config.Config) -> config.Config:  # noqa: PRM002
 	"""
 	Parse the command line and ini options.
 	"""
@@ -131,7 +131,7 @@ def tox_configure(config: config.Config) -> config.Config:
 
 			elif envlist_name_set:
 				config._parser.argparser.error(
-						f"Unknown envlist {arg[1]!r}. (envlists are {word_join(envlists, use_repr=True)})"
+						f"Unknown envlist {arg[1]!r}. (envlists are {word_join(envlists, use_repr=True)})",
 						)
 
 	config.args = list(chain.from_iterable(args))

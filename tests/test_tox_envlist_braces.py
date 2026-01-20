@@ -5,8 +5,8 @@ from typing import List
 
 # 3rd party
 import pytest
-import tox  # type: ignore
-import tox.reporter  # type: ignore
+import tox  # type: ignore[import-untyped]
+import tox.reporter  # type: ignore[import-untyped]
 from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.paths import PathPlus
 from testing_tox import prepare_stdout, run_tox
@@ -39,7 +39,7 @@ manual_envs = f"py{sys.version_info[0]}{sys.version_info[1]}-attrs{19.3,20.2},my
 				pytest.param(["-n", "qa"], id="qa_envlist"),
 				pytest.param(["-n", "qa", "--", "--verbose"], id="envlist_posargs"),
 				pytest.param(["-n", "qa", "-e", "mypy"], id="invalid_combo"),
-				]
+				],
 		)
 @pytest.mark.usefixtures("version", "os_sep")
 def test_tox_envlist(

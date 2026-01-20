@@ -38,7 +38,7 @@ manual_envs = f"py{sys.version_info[0]}{sys.version_info[1]},mypy"
 				pytest.param(["-n", "qa"], id="qa_envlist"),
 				pytest.param(["-n", "qa", "--", "--verbose"], id="envlist_posargs"),
 				pytest.param(["-n", "qa", "-e", "mypy"], id="invalid_combo"),
-				]
+				],
 		)
 @pytest.mark.usefixtures("version", "os_sep")
 def test_tox_envlist(

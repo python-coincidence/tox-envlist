@@ -17,7 +17,7 @@ pytest_plugins = ("coincidence", )
 				pytest.param("3.11", marks=only_version("3.11", "Output differs on each version.")),
 				pytest.param("3.12", marks=only_version("3.12", "Output differs on each version.")),
 				pytest.param("3.13", marks=only_version("3.13", "Output differs on each version.")),
-				]
+				],
 		)
 def version(request) -> str:
 	return request.param
@@ -27,15 +27,19 @@ def version(request) -> str:
 		params=[
 				pytest.param(
 						"forward",
-						marks=pytest.mark.
-						skipif(os.sep == '\\', reason=r"Output differs on platforms where os.sep == '\\'")
+						marks=pytest.mark.skipif(
+								os.sep == '\\',
+								reason=r"Output differs on platforms where os.sep == '\\'",
+								),
 						),
 				pytest.param(
 						"backward",
-						marks=pytest.mark.
-						skipif(os.sep == '/', reason="Output differs on platforms where os.sep == '/'")
+						marks=pytest.mark.skipif(
+								os.sep == '/',
+								reason="Output differs on platforms where os.sep == '/'",
+								),
 						),
-				]
+				],
 		)
 def os_sep(request) -> str:
 	return request.param
